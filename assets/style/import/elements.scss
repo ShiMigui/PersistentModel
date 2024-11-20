@@ -1,0 +1,34 @@
+$padding-elements: 5px;
+$radius-elements: 5px;
+
+button,
+.btn{
+   border-radius: $radius-elements;
+   padding: $padding-elements;
+   border: 1px solid $primary-color;
+   background-color: white;
+   display: inline-flex;
+   align-items: center;
+   color: $primary-color;
+   border: none;
+
+   &:not(.secondary) {
+      background-color: $primary-color;
+      color: white;
+   }
+
+   &:hover {
+      filter: brightness(.95);
+      cursor: pointer;
+   }
+
+   &:active {
+      transform: scale(.95);
+   }
+}
+
+input {
+   padding: $padding-elements calc($padding-elements * 2);
+   border-radius: $radius-elements;
+   border: 1px solid $primary-color;
+}

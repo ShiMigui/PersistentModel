@@ -1,0 +1,20 @@
+$limit: 1024px;
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.limiter {
+  margin-inline: auto;
+  max-width: $limit;
+  width: 100%;
+}
+
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

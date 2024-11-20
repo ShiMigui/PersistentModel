@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.limiter, main {
+  margin-inline: auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
+button,
+.btn {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid orange;
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  color: orange;
+  border: none;
+}
+button:not(.secondary),
+.btn:not(.secondary) {
+  background-color: orange;
+  color: white;
+}
+button:hover,
+.btn:hover {
+  filter: brightness(0.95);
+  cursor: pointer;
+}
+button:active,
+.btn:active {
+  transform: scale(0.95);
+}
+
+input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid orange;
+}
+
+main {
+  min-height: 80vh;
+}
+
+header {
+  background-color: orange;
+  padding: 10px;
+}
+header > .limiter, header > main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > .limiter .right, header > main .right {
+  display: flex;
+  gap: 10px;
+}/*# sourceMappingURL=global.css.map */
