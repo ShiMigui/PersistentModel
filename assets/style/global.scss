@@ -2,9 +2,22 @@
 @import "./import/basic.scss";
 @import "./import/elements.scss";
 
+body {
+   font-family: Arial, sans-serif;
+   background-color: #F2F2F2;
+}
 main {
    @extend .limiter;
    min-height: 80vh;
+}
+
+#banner{
+   @include flex(center);
+   background-color: black;
+   img{
+      @extend .limiter;
+      aspect-ratio: 4/1;
+   }
 }
 
 header {
@@ -12,11 +25,35 @@ header {
    padding: 10px;
 
    &>.limiter {
-      @include flex(space-between, center);
+      @include flex(space-between, center, 10px);
+
+      form{
+         @include flex();
+      }
 
       .right {
          display: flex;
          gap: 10px;
+      }
+   }
+}
+
+.publications-sect{
+   padding: 10px;
+   .publications{
+      @include grid();
+
+      .publication{
+         color: black;
+         img{
+            border-radius: $radius-elements;
+            background-color: rgb(0, 0, 0, 0.1);
+            aspect-ratio: 16/9;
+            display: block;
+         }
+         p{
+            color: gray;
+         }
       }
    }
 }

@@ -1,13 +1,49 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  font-size: 16px;
   padding: 0;
   margin: 0;
 }
 
-.limiter, main {
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1.1em;
+}
+
+h3, h4, h5, h5, p {
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.limiter, #banner img, main {
   margin-inline: auto;
-  max-width: 1024px;
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -15,16 +51,16 @@ button,
 .btn {
   border-radius: 5px;
   padding: 5px;
-  border: 1px solid orange;
+  border: 1px solid #5C95FF;
   background-color: white;
   display: inline-flex;
   align-items: center;
-  color: orange;
+  color: #5C95FF;
   border: none;
 }
 button:not(.secondary),
 .btn:not(.secondary) {
-  background-color: orange;
+  background-color: #5C95FF;
   color: white;
 }
 button:hover,
@@ -40,23 +76,71 @@ button:active,
 input {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid orange;
+  border: 1px solid #5C95FF;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F2F2F2;
 }
 
 main {
   min-height: 80vh;
 }
 
+#banner {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0px;
+  background-color: black;
+}
+#banner img {
+  aspect-ratio: 4/1;
+}
+
 header {
-  background-color: orange;
+  background-color: #5C95FF;
   padding: 10px;
 }
-header > .limiter, header > main {
-  display: flex;
+header > .limiter, header > main, #banner header > img {
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-header > .limiter .right, header > main .right {
   display: flex;
   gap: 10px;
+}
+header > .limiter form, header > main form, #banner header > img form {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0px;
+}
+header > .limiter .right, header > main .right, #banner header > img .right {
+  display: flex;
+  gap: 10px;
+}
+
+.publications-sect {
+  padding: 10px;
+}
+.publications-sect .publications {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  display: grid;
+  gap: 10px;
+}
+.publications-sect .publications .publication {
+  color: black;
+}
+.publications-sect .publications .publication img {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+  display: block;
+}
+.publications-sect .publications .publication p {
+  color: gray;
 }/*# sourceMappingURL=global.css.map */
