@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0;
   margin: 0;
 }
@@ -41,7 +41,7 @@ a {
   color: inherit;
 }
 
-.limiter, #banner img, main {
+.limiter, body > #banner img, main {
   margin-inline: auto;
   max-width: 1000px;
   width: 100%;
@@ -79,50 +79,6 @@ input {
   border: 1px solid #5C95FF;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #F2F2F2;
-}
-
-main {
-  min-height: 80vh;
-}
-
-#banner {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 0px;
-  background-color: black;
-}
-#banner img {
-  aspect-ratio: 4/1;
-}
-
-header {
-  background-color: #5C95FF;
-  padding: 10px;
-}
-header > .limiter, header > main, #banner header > img {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-}
-header > .limiter form, header > main form, #banner header > img form {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 0px;
-}
-header > .limiter .right, header > main .right, #banner header > img .right {
-  display: flex;
-  gap: 10px;
-}
-
 .publications-sect {
   padding: 10px;
 }
@@ -143,4 +99,56 @@ header > .limiter .right, header > main .right, #banner header > img .right {
 }
 .publications-sect .publications .publication p {
   color: gray;
+}
+
+header {
+  background-color: #5C95FF;
+  padding: 10px;
+}
+header > .limiter, body > #banner header > img, header > main {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+header > .limiter form, body > #banner header > img form, header > main form {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0px;
+}
+header > .limiter form :first-child, body > #banner header > img form :first-child, header > main form :first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+header > .limiter form :last-child, body > #banner header > img form :last-child, header > main form :last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+header > .limiter .right, body > #banner header > img .right, header > main .right {
+  display: flex;
+  gap: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+main {
+  min-height: 80vh;
+}
+
+body > #banner {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0px;
+}
+body > #banner img {
+  background-color: rgba(0, 0, 0, 0.1);
+  aspect-ratio: 4/1;
 }/*# sourceMappingURL=global.css.map */

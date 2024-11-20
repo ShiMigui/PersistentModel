@@ -32,3 +32,54 @@ input {
    border-radius: $radius-elements;
    border: 1px solid $primary-color;
 }
+
+.publications-sect {
+   padding: 10px;
+
+   .publications {
+      @include grid();
+
+      .publication {
+         color: black;
+
+         img {
+            border-radius: $radius-elements;
+            background-color: rgba(0, 0, 0, 0.1); //TEMP
+            aspect-ratio: 16/9;
+            display: block;
+         }
+
+         p {
+            color: gray;
+         }
+      }
+   }
+}
+
+header {
+   background-color: $primary-color;
+   padding: 10px;
+
+   &>.limiter {
+      @include flex(space-between, center, 10px);
+
+      form {
+         @include flex();
+
+         :first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+         }
+
+         :last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+         }
+      }
+
+      .right {
+         display: flex;
+         gap: 10px;
+      }
+   }
+}

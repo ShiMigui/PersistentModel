@@ -1,0 +1,33 @@
+@import "./import/variables.scss";
+@import "./import/mixins.scss";
+
+main{
+    & > #banner {
+        display: flex;
+    
+        img {
+            margin: 0 15px 15px 0;
+            width: 50%;
+        }
+    
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            h2{
+                color: $primary-color;
+            }
+        }
+    }
+
+    #guests{
+        @include flex(center, center, 10px);
+        .guest{
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 100%;
+            aspect-ratio: 1 / 1;
+            display: block;
+            width: 30px;
+        }
+    }
+}

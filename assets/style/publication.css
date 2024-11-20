@@ -1,0 +1,29 @@
+main > #banner {
+  display: flex;
+}
+main > #banner img {
+  margin: 0 15px 15px 0;
+  width: 50%;
+}
+main > #banner div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+main > #banner div h2 {
+  color: #5C95FF;
+}
+main #guests {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+main #guests .guest {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  display: block;
+  width: 30px;
+}/*# sourceMappingURL=publication.css.map */
