@@ -1,0 +1,1 @@
+let generated = localStorage.getItem("generateInstances") == "True";

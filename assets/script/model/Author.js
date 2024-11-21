@@ -1,6 +1,7 @@
-import { PersistentModel } from "./PersistentModel.js";
+import { Persistent } from "./Persistent.js";
+import { Guest } from "./Guest.js";
 
-export class Classification extends PersistentModel {
+export class Classification extends Persistent {
     note = 0;
 
     constructor({ id = 1, note = 0 } = {}) {
@@ -9,17 +10,11 @@ export class Classification extends PersistentModel {
     }
 };
 
-export class Author extends PersistentModel {
-    name = '';
-    /**
-     * An array of Classification instances or an empty array.
-     * @type {Classification[]}
-     */
+export class Author extends Guest {
     classifications = [];
 
-    constructor({ id = 1, name = '', classifications = [] } = {}) {
-        super({ id });
-        this.name = name;
+    constructor({ id = 1, name = '', email = '', classifications = [] } = {}) {
+        super({ id, name, email });
         this.classifications = classifications.map(o => new Classification(o));
     }
 
@@ -31,10 +26,11 @@ export class Author extends PersistentModel {
     }
 
     classification() {
-        if (this.classifications.length === 0) {
+        const LENGTH = this.classifications.length
+        if (LENGTH === 0) {
             return null;
         }
 
-        return this.classifications.reduce((sum, c) => sum + c.note, 0);
+        return this.classifications.reduce((sum, c) => sum + c.note, 0) / LENGTH;
     }
 }
