@@ -1,6 +1,6 @@
-import { Persistent } from "./Persistent.js";
+import Persistent from "./Persistent.js";
 
-export class Guest extends Persistent {
+export default class Guest extends Persistent {
     name = '';
     email = '';
 

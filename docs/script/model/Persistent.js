@@ -1,4 +1,4 @@
-export class Persistent {
+export default class Persistent {
    id = 0;
 
    constructor({ id = 1 } = {}) {

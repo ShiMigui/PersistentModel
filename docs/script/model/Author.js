@@ -1,16 +1,7 @@
-import { Persistent } from "./Persistent.js";
-import { Guest } from "./Guest.js";
+import Classification from "./Classification.js";
+import Guest from "./Guest.js";
 
-export class Classification extends Persistent {
-    note = 0;
-
-    constructor({ id = 1, note = 0 } = {}) {
-        super({ id });
-        this.note = note;
-    }
-};
-
-export class Author extends Guest {
+export default class Author extends Guest {
     classifications = [];
 
     constructor({ id = 1, name = '', email = '', classifications = [] } = {}) {

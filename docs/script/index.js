@@ -1,4 +1,4 @@
-import { Publication } from "./model/Publication.js";
+import Publication from "./model/Publication.js";
 
 {
     let generated = localStorage.getItem("generateInstances") == "True";
@@ -15,11 +15,9 @@ import { Publication } from "./model/Publication.js";
     }
 }
 
-let publications = document.querySelector(".publications");
-
-console.log(Publication.getLength());
-
-for (let i = 1; i <= Publication.getLength(); i++) {
-    let publication = Publication.retrieveById(i);
+const publications = document.querySelector(".publications");
+const publicationsLenght = Publication.getLength();
+for (let i = 1; i <= publicationsLenght; i++) {
+    const publication = Publication.retrieveById(i);
     publications.innerHTML += publication.render();
 }

@@ -1,13 +1,16 @@
-import { Publication, PublicationType } from "./model/Publication.js";
-import { Author, Classification } from "./model/Author.js";
-import generateInstances from "./localStorage/generateInstances.js";
-import { Guest } from "./model/Guest.js";
+import generateInstances from "./func/generateInstances.js";
+import PublicationType from "./model/PublicationType.js";
+import Classification from "./model/Classification.js";
+import Publication from "./model/Publication.js";
+import Author from "./model/Author.js";
+import Guest from "./model/Guest.js";
+
 
 generateInstances(PublicationType);
-generateInstances(Guest);
 generateInstances(Classification);
-generateInstances(Author);
 generateInstances(Publication);
+generateInstances(Author);
+generateInstances(Guest);
 
 localStorage.setItem("generateInstances", "True");
 

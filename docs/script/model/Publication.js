@@ -1,18 +1,9 @@
-import { Persistent } from "./Persistent.js";
-import { Author } from "./Author.js";
-import { Guest } from "./Guest.js";
-import formatDate from "../formatDate.js";
+import formatDate from "../func/formatDate.js";
+import Persistent from "./Persistent.js";
+import Author from "./Author.js";
+import Guest from "./Guest.js";
 
-export class PublicationType extends Persistent {
-    name = '';
-
-    constructor({ id = 1, name = '' } = {}) {
-        super({ id });
-        this.name = name;
-    }
-}
-
-export class Publication extends Persistent {
+export default class Publication extends Persistent {
     date = new Date();
     title = '';
     type = null;
