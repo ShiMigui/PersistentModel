@@ -1,5 +1,7 @@
 import { database } from "./database.js";
 
+const BODY = document.querySelector("body");
+
 /**
  * Generates instances of a given class and commits them.
  *
@@ -31,20 +33,7 @@ export default function generateInstances(node = null) {
     ARR.forEach(item => {
         const instance = new node(item);
         const comp = instance.name ? ` - ${instance.name}` : '';
-        console.log(`Generating... ${NAME}, ID: ${instance.id}${comp}`);
+        BODY.innerHTML += (`Generating... ${NAME}, ID: ${instance.id}${comp}<br/>`);
         instance.commit();
     });
 }
-
-import generateInstances from "./generateInstances.js";
-import { Author, Classification } from "./model/Author.js";
-import { Guest } from "./model/Guest.js";
-import { Publication, PublicationType } from "./model/Publication.js";
-
-generateInstances(PublicationType);
-generateInstances(Guest);
-generateInstances(Classification);
-generateInstances(Author);
-generateInstances(Publication);
-
-localStorage.setItem("generateInstances", "True");
