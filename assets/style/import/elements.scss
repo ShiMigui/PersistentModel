@@ -2,7 +2,7 @@ $padding-elements: 5px;
 $radius-elements: 5px;
 
 button,
-.btn{
+.btn {
    border-radius: $radius-elements;
    padding: $padding-elements;
    border: 1px solid $primary-color;
@@ -37,20 +37,32 @@ input {
    padding: 10px;
 
    .publications {
-      @include grid();
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
 
       .publication {
+         width: 100%;
+         max-width: 100%;
+         box-sizing: border-box;
+
          color: black;
 
          img {
             border-radius: $radius-elements;
-            background-color: rgba(0, 0, 0, 0.1); //TEMP
+            background-color: rgba(0, 0, 0, 0.1);
             aspect-ratio: 16/9;
             display: block;
          }
 
          p {
             color: gray;
+         }
+
+         .title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
          }
       }
    }

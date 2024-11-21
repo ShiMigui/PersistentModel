@@ -10,8 +10,8 @@ export class Persistent {
       const KEY = `${this.constructor.name}.${this.id}`;
       localStorage.setItem(KEY, str);
 
-      if (this.id > this.getLength()) {
-         this.setLength(this.id);
+      if (this.id > this.constructor.getLength()) {
+         this.constructor.setLength(this.id);
       }
    }
 
@@ -20,12 +20,12 @@ export class Persistent {
       return DATA ? new this(JSON.parse(DATA)) : null;
    }
 
-   getLength() {
-      const N = localStorage.getItem(`${this.constructor.name}.length`);
+   static getLength() {
+      const N = localStorage.getItem(`${this.name}.length`);
       return parseInt(N || 0);
    }
 
-   setLength(id = 1) {
-      localStorage.setItem(`${this.constructor.name}.length`, id);
+   static setLength(id = 1) {
+      localStorage.setItem(`${this.name}.length`, id);
    }
 };
