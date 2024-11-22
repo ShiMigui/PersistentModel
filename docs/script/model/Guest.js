@@ -43,4 +43,14 @@ export default class Guest extends Persistent {
         this.email = email;
         this.password = password;
     }
+
+    /**
+     * Returns the guest's name capitalized.
+     * 
+     * @returns {string} The first guest's name.
+     */
+    firstName(){
+        const NAME = this.name.split(' ')[0];
+        return NAME.at(0) + NAME.slice(1).toLowerCase();
+    }
 }
