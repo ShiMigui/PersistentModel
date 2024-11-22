@@ -1,10 +1,9 @@
 import areInstancesGenerated from "./func/areInstancesGenerated.js";
 import getUsers from "./func/getUsers.js";
+import { isLoggedIn, login } from "./func/userAuth.js";
 
 if (areInstancesGenerated()) {
-    const LOGIN = sessionStorage.getItem("login");
-    if (LOGIN && localStorage.getItem(LOGIN))
-        window.location.href = "index.html";
+    if (isLoggedIn()) window.location.href = "index.html";
 
     const PERSONS = getUsers();
 
@@ -26,9 +25,9 @@ if (areInstancesGenerated()) {
 
         for (let item of PERSONS) {
             if (item.password === PASS && (item.name == NAME || item.email == NAME)) {
-                sessionStorage.setItem("login", item.getKey());
-                window.location.href = "index.html";
-                return null;
+                login(item.getKey());
+                window.location.href = "index.html"
+                return;
             }
         }
 
