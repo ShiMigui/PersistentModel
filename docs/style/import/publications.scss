@@ -1,34 +1,35 @@
 .publications-sect {
-    padding: 10px;
- 
-    .publications {
-       display: grid;
-       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-       gap: 20px;
- 
-       .publication {
-          width: 100%;
-          max-width: 100%;
-          box-sizing: border-box;
- 
-          color: black;
- 
-          img {
-             border-radius: $radius-elements;
-             background-color: rgba(0, 0, 0, 0.1);
-             aspect-ratio: 16/9;
-             display: block;
-          }
- 
-          p {
-             color: gray;
-          }
- 
-          .title {
-             white-space: nowrap;
-             overflow: hidden;
-             text-overflow: ellipsis;
-          }
-       }
-    }
- }
+   padding: 10px;
+
+   .publications {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+
+      .publication {
+         width: 100%;
+         max-width: 100%;
+         box-sizing: border-box;
+
+         color: black;
+
+         img {
+            border-radius: $radius-elements;
+            background-color: rgba(0, 0, 0, 0.1);
+            aspect-ratio: 16/9;
+            display: block;
+            width: 100%;
+         }
+
+         p {
+            color: gray;
+         }
+
+         .title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+         }
+      }
+   }
+}

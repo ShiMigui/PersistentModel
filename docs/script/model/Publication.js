@@ -81,9 +81,14 @@ export default class Publication extends Persistent {
      * @returns {string} The HTML string representation of the publication.
      */
     render() {
+        //./assets/image/p${this.id}.jpg
+        /*
+            Supposedly, in a CDN, the thumbnail should be larger for better quality. 
+            However, to optimize network speed, it is kept smaller than 1920x1080. (in this case 800x450)
+        */
         return `
         <a class="publication" href="./publication.html?cd=${this.id}">
-            <img src="./assets/image/p${this.id}.jpg" alt="${this.description}">
+            <img src="https://via.placeholder.com/800x450" alt="${this.description}">
             <h4 class='title'>${this.title}</h4>
             <p class='description'>${formatDate(this.date)}</p>
         </a>

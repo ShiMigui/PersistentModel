@@ -5,7 +5,9 @@ main{
         display: flex;
     
         img {
+            background-color: black;
             margin: 0 15px 15px 0;
+            aspect-ratio: 16 / 9;
             width: 50%;
         }
     

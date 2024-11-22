@@ -40,7 +40,7 @@ a {
   text-decoration: none;
 }
 
-.limiter, main, body > #banner img {
+.limiter, body main, body > #banner img {
   margin-inline: auto;
   max-width: 1000px;
   width: 100%;
@@ -48,27 +48,6 @@ a {
 
 .hidden {
   display: none !important;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
-body > #banner {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 0px;
-  background-color: black;
-}
-body > #banner img {
-  background-color: rgba(255, 255, 255, 0.1);
-  aspect-ratio: 4/1;
-}
-
-main {
-  min-height: 80vh;
 }
 
 button,
@@ -113,31 +92,50 @@ header {
   color: white;
   padding: 10px;
 }
-header > .limiter, body > #banner header > img, header > main {
+header > .limiter, body header > main, body > #banner header > img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   display: flex;
   gap: 10px;
 }
-header > .limiter form, body > #banner header > img form, header > main form {
+header > .limiter form, body header > main form, body > #banner header > img form {
   flex-direction: row;
   justify-content: center;
   align-items: center;
   display: flex;
   gap: 0px;
 }
-header > .limiter form :first-child, body > #banner header > img form :first-child, header > main form :first-child {
+header > .limiter form :first-child, body header > main form :first-child, body > #banner header > img form :first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-header > .limiter form :last-child, body > #banner header > img form :last-child, header > main form :last-child {
+header > .limiter form :last-child, body header > main form :last-child, body > #banner header > img form :last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-header > .limiter .right, body > #banner header > img .right, header > main .right {
+header > .limiter .right, body header > main .right, body > #banner header > img .right {
   display: flex;
   gap: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+body > #banner {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0px;
+  background-color: black;
+}
+body > #banner img {
+  aspect-ratio: 4/1;
+}
+body main {
+  min-height: 80vh;
 }
 
 .publications-sect {
@@ -159,6 +157,7 @@ header > .limiter .right, body > #banner header > img .right, header > main .rig
   background-color: rgba(0, 0, 0, 0.1);
   aspect-ratio: 16/9;
   display: block;
+  width: 100%;
 }
 .publications-sect .publications .publication p {
   color: gray;
