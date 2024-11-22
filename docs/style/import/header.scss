@@ -1,0 +1,28 @@
+header {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px;
+ 
+    &>.limiter {
+       @include flex(space-between, center, 10px);
+ 
+       form {
+          @include flex();
+ 
+          :first-child {
+             border-top-right-radius: 0;
+             border-bottom-right-radius: 0;
+          }
+ 
+          :last-child {
+             border-top-left-radius: 0;
+             border-bottom-left-radius: 0;
+          }
+       }
+ 
+       .right {
+          display: flex;
+          gap: 10px;
+       }
+    }
+ }
