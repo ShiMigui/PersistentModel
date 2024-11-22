@@ -30,10 +30,13 @@ export default function generateInstances(node = null) {
         return;
     }
 
-    ARR.forEach(item => {
-        const instance = new node(item);
-        const comp = instance.name ? ` - ${instance.name}` : '';
-        BODY.innerHTML += (`Generating... ${NAME}, ID: ${instance.id}${comp}<br/>`);
-        instance.commit();
-    });
-}
+    for(let index in ARR){
+        const ITEM = ARR[index];
+        ITEM.id = index;
+
+        const INSTANCE = new node(ITEM);
+        const COMP = INSTANCE.name ? ` - ${INSTANCE.name}` : '';
+        BODY.innerHTML += (`Generating... ${NAME}, ID: ${INSTANCE.id}${COMP}<br/>`);
+        INSTANCE.commit();
+    }
+} 
