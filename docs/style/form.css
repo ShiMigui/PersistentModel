@@ -40,26 +40,48 @@ a {
   text-decoration: none;
 }
 
-.limiter, body > #banner img, main {
+.limiter, .center-box, body > #banner img, main {
   margin-inline: auto;
   max-width: 1000px;
   width: 100%;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+main {
+  min-height: 80vh;
+}
+
+body > #banner {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0px;
+  background-color: black;
+}
+body > #banner img {
+  background-color: rgba(255, 255, 255, 0.1);
+  aspect-ratio: 4/1;
+}
+
 button,
 .btn {
+  border: 1px solid #0075F2;
   border-radius: 5px;
-  padding: 5px;
-  border: 1px solid #5C95FF;
+  padding: 5px 10px;
   background-color: white;
   display: inline-flex;
   align-items: center;
-  color: #5C95FF;
+  color: #0075F2;
   border: none;
 }
 button:not(.secondary),
 .btn:not(.secondary) {
-  background-color: #5C95FF;
+  background-color: #0075F2;
   color: white;
 }
 button:hover,
@@ -75,7 +97,7 @@ button:active,
 input {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #5C95FF;
+  border: 1px solid #0075F2;
 }
 
 .publications-sect {
@@ -108,84 +130,61 @@ input {
 }
 
 header {
-  background-color: #5C95FF;
+  background-color: #0075F2;
   padding: 10px;
 }
-header > .limiter, body > #banner header > img, header > main {
+header > .limiter, header > .center-box, header > main, body > #banner header > img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   display: flex;
   gap: 10px;
 }
-header > .limiter form, body > #banner header > img form, header > main form {
+header > .limiter form, header > .center-box form, header > main form, body > #banner header > img form {
   flex-direction: row;
   justify-content: center;
   align-items: center;
   display: flex;
   gap: 0px;
 }
-header > .limiter form :first-child, body > #banner header > img form :first-child, header > main form :first-child {
+header > .limiter form :first-child, header > .center-box form :first-child, header > main form :first-child, body > #banner header > img form :first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-header > .limiter form :last-child, body > #banner header > img form :last-child, header > main form :last-child {
+header > .limiter form :last-child, header > .center-box form :last-child, header > main form :last-child, body > #banner header > img form :last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-header > .limiter .right, body > #banner header > img .right, header > main .right {
+header > .limiter .right, header > .center-box .right, header > main .right, body > #banner header > img .right {
   display: flex;
   gap: 10px;
+}
+
+fieldset {
+  padding: 5px 10px;
+  border: none;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
-
-main {
-  min-height: 80vh;
-}
-
-body > #banner {
-  flex-direction: row;
-  justify-content: center;
+  background-color: #005cbf;
   align-items: center;
+  min-height: 100vh;
   display: flex;
-  gap: 0px;
-  background-color: black;
-}
-body > #banner img {
-  background-color: rgba(255, 255, 255, 0.1);
-  aspect-ratio: 4/1;
 }
 
-main > #banner {
-  display: flex;
-}
-main > #banner img {
-  margin: 0 15px 15px 0;
-  width: 50%;
-}
-main > #banner div {
-  display: flex;
+.center-box {
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
   flex-direction: column;
-  justify-content: flex-end;
-}
-main > #banner div h2 {
-  color: #5C95FF;
-}
-main #guests {
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  padding: 20px;
   display: flex;
-  gap: 10px;
 }
-main #guests .guest {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 100%;
-  aspect-ratio: 1/1;
-  display: block;
-  width: 30px;
-}/*# sourceMappingURL=publication.css.map */
+.center-box fieldset * {
+  margin-bottom: 15px;
+}
+.center-box input {
+  width: 100%;
+}/*# sourceMappingURL=form.css.map */

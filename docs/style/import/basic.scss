@@ -13,3 +13,24 @@
   max-width: $limit;
   width: 100%;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+main {
+  @extend .limiter;
+  min-height: 80vh;
+}
+
+body>#banner {
+  @include flex(center);
+  background-color: black;
+
+  img {
+    background-color: rgba(255, 255, 255, 0.1);
+    @extend .limiter;
+    aspect-ratio: 4/1;
+  }
+}

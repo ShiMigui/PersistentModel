@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./script/cadastro.js" defer></script>
+    <link rel="stylesheet" href="./style/form.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <form class="center-box">
+        <fieldset>
+            <legend>Cadastro</legend>
+
+            <label for="emailInp">Email</label>
+            <input type="email" id="emailInp" name="email" autocomplete="email" required>
+
+            <label for="nameInp">Nome completo</label>
+            <input type="text" id="nameInp" name="fullname" autocomplete="username" required>
+
+            <label for="passwordInp">Senha</label>
+            <input type="password" id="passwordInp" name="password" autocomplete="new-password" minlength="8" required>
+
+            <label for="passwordInp2">Confirme sua senha</label>
+            <input type="password" id="passwordInp2" name="confirmPassword" autocomplete="off" minlength="8" required>
+
+            <button type="submit">Cadastrar</button>
+        </fieldset>
+        <a href="index.html">Voltar</a>
+    </form>
+</body>
+
+</html>

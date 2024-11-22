@@ -39,7 +39,7 @@ export default class Guest extends Persistent {
      */
     constructor({ id, name, email, password } = {}) {
         super({ id });
-        this.name = name;
+        this.name = name.toUpperCase();
         this.email = email;
         this.password = password;
     }
