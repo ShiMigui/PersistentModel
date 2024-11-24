@@ -34,3 +34,7 @@ fieldset{
    padding: $padding-elements;
    border: none;
 }
+
+.buttons{
+   @include flex(center, center, 10px);
+}
