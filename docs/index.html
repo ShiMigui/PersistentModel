@@ -4,6 +4,8 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
    <script src="./script/index.js" type="module" defer></script>
    <link rel="stylesheet" href="./style/global.css">
    <title>Home</title>
@@ -30,8 +32,12 @@
             </div>
 
             <article id="account-box" class="hidden">
-               <h6 id="account-name">NAME</h6>
-               <a href="./logout.html">Sair</a>
+               <img src="" alt="imagem do usuário" id="account-image">
+               <ion-icon name="chevron-down-outline"></ion-icon>
+               <ul class="dropdown">
+                  <h6 id="account-name">NAME</h6>
+                  <li><a href="./logout.html">Sair</a></li>
+               </ul>
             </article>
          </div>
       </section>

@@ -27,6 +27,8 @@ export default class Guest extends Persistent {
      */
     name = '';
 
+    image = 'https://via.placeholder.com/50x50'
+
     /**
      * Constructs a new Guest instance.
      * 
