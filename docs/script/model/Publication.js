@@ -52,6 +52,8 @@ export default class Publication extends Persistent {
      */
     sharedWith = [];
 
+    image = `https://via.placeholder.com/800x450`;
+
     /**
      * Constructs a new Publication instance.
      * 
@@ -88,7 +90,7 @@ export default class Publication extends Persistent {
         */
         return `
         <a class="publication" href="./publication.html?cd=${this.id}">
-            <img src="https://via.placeholder.com/800x450" alt="${this.description}">
+            <img src="${this.image}" alt="${this.description}">
             <h4 class='title'>${this.title}</h4>
             <p class='description'>${formatDate(this.date)}</p>
         </a>

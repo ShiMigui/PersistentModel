@@ -1,34 +1,45 @@
 @import "./global.scss";
 
-main{
-    & > #banner {
-        display: flex;
-    
+main {
+    & #banner {
+        position: relative;
+
         img {
             background-color: black;
+            filter: brightness(0.3);
             margin: 0 15px 15px 0;
             aspect-ratio: 16 / 9;
-            width: 50%;
+            width: 100%;
         }
-    
+
         div {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            h2{
-                color: $primary-color;
+            position: absolute;
+            padding: 20px;
+            bottom: 0;
+            right: 0;
+
+            * {
+                text-align: end;
+                color: white;
             }
         }
     }
 
-    #guests{
-        @include flex(center, center, 10px);
-        .guest{
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 100%;
-            aspect-ratio: 1 / 1;
-            display: block;
-            width: 30px;
+    #guests {
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+
+        .guest-box {
+            @include flex(center, center, 2px, column);
+
+            .guest {
+                background-color: rgb(0, 0, 0);
+                border-radius: 100%;
+                aspect-ratio: 1 / 1;
+                display: block;
+                width: 100%;
+            }
         }
     }
 }

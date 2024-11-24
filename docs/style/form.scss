@@ -1,4 +1,8 @@
-@import "./global.scss";
+@import "./import/variables.scss";
+@import "./import/mixins.scss";
+@import "./import/basic.scss";
+
+@import "./import/elements.scss";
 
 body {
     background-color: darken($color: $primary-color, $amount: 10%);

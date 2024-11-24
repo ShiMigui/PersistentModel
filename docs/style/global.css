@@ -216,4 +216,8 @@ fieldset {
   align-items: center;
   display: flex;
   gap: 10px;
+}
+
+.container-box + .container-box {
+  margin-top: 50px;
 }/*# sourceMappingURL=global.css.map */

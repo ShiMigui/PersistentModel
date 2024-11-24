@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <section class="limiter">
             <a href="./index.html"><img src="./image/logo.png" alt="logo do site"></a>
@@ -20,33 +21,40 @@
             </form>
 
             <div class="right">
-                <a href="./login.html" class="btn">Login</a>
-                <a href="./cadastro.html" class="btn secondary">Cadastre-se</a>
-                
+                <div class="buttons">
+                    <a href="./login.html" class="btn">Login</a>
+                    <a href="./cadastro.html" class="btn secondary">Cadastre-se</a>
+                </div>
+
                 <article id="account-box" class="hidden">
-                   <h6 id="account-name">NAME</h6>
+                    <img src="" alt="imagem do usuário" id="account-image">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                    <ul class="dropdown">
+                        <h6 id="account-name">NAME</h6>
+                        <li><a href="./logout.html">Sair</a></li>
+                    </ul>
                 </article>
-             </div>
+            </div>
         </section>
     </header>
+    
     <main>
-        <div id="banner">
-            <img src="" alt="banner do show">
-            <div>
-                <h1 id="title"></h1>
-                <h2 id="date"></h2>
+        <article class="container-box">
+            <div id="banner">
+                <img src="" alt="banner do show">
+                <div>
+                    <h1 id="title"></h1>
+                    <h2 id="date"></h2>
+                </div>
             </div>
-        </div>
-        <p id="description"></p>
+            <p id="description"></p>
+            <p>Author: <b id="author"></b></p>
+        </article>
 
-        <section id="guests">
-            <img src="" alt="" class="guest">
-            <img src="" alt="" class="guest">
-            <img src="" alt="" class="guest">
-            <img src="" alt="" class="guest">
-            <img src="" alt="" class="guest">
-            <img src="" alt="" class="guest">
-        </section>
+        <article class="container-box">
+            <h2>Guests</h2>
+            <section id="guests"></section>
+        </article>
     </main>
 </body>
 

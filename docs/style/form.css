@@ -40,7 +40,7 @@ a {
   text-decoration: none;
 }
 
-.limiter, .center-box, body main, body > #banner img {
+.limiter, .center-box {
   margin-inline: auto;
   max-width: 1000px;
   width: 100%;
@@ -95,85 +95,8 @@ fieldset {
   gap: 10px;
 }
 
-header {
-  background-color: #0075F2;
-  color: white;
-  padding: 10px;
-}
-header > .limiter, header > .center-box, body header > main, body > #banner header > img {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-}
-header > .limiter form, header > .center-box form, body header > main form, body > #banner header > img form {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 0px;
-}
-header > .limiter form :first-child, header > .center-box form :first-child, body header > main form :first-child, body > #banner header > img form :first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-header > .limiter form :last-child, header > .center-box form :last-child, body header > main form :last-child, body > #banner header > img form :last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-header > .limiter .right, header > .center-box .right, body header > main .right, body > #banner header > img .right {
-  display: flex;
-  gap: 10px;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
-body > #banner {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 0px;
-  background-color: black;
-}
-body > #banner img {
-  aspect-ratio: 4/1;
-}
-body main {
-  min-height: 80vh;
-}
-
-.publications-sect {
-  padding: 10px;
-}
-.publications-sect .publications {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-.publications-sect .publications .publication {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  color: black;
-}
-.publications-sect .publications .publication img {
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.1);
-  aspect-ratio: 16/9;
-  display: block;
-  width: 100%;
-}
-.publications-sect .publications .publication p {
-  color: gray;
-}
-.publications-sect .publications .publication .title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.container-box + .container-box {
+  margin-top: 50px;
 }
 
 body {

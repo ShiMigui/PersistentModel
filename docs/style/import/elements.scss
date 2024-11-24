@@ -30,11 +30,15 @@ input {
    border: 1px solid $primary-color;
 }
 
-fieldset{
+fieldset {
    padding: $padding-elements;
    border: none;
 }
 
-.buttons{
+.buttons {
    @include flex(center, center, 10px);
+}
+
+.container-box+.container-box {
+   margin-top: 50px;
 }

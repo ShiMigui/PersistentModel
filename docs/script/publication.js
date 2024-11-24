@@ -12,16 +12,26 @@ if (areInstancesGenerated()) {
 
     const publication = Publication.retrieveById(ID);
 
-    const MAIN = document.querySelector("main");
+    const $main = document.querySelector("main");
 
-    const description = MAIN.querySelector("#description");
-    const IMG = MAIN.querySelector("#banner img");
-    const title = MAIN.querySelector("#title");
-    const date = MAIN.querySelector("#date");
+    const $description = $main.querySelector("#description");
+    const $img = $main.querySelector("#banner img");
+    const $guests = $main.querySelector("#guests");
+    const $author = $main.querySelector("#author");
+    const $title = $main.querySelector("#title");
+    const $date = $main.querySelector("#date");
 
-    IMG.src = "https://via.placeholder.com/1920x1080";
+    
+    $author.textContent = publication.author.firstName();
+    $description.textContent = publication.description;
+    $date.textContent = formatDate(publication.date);
+    $title.textContent = publication.title;
+    $img.src = publication.image;
 
-    description.textContent = publication.description;
-    date.textContent = formatDate(publication.date);
-    title.textContent = publication.title;
+    let str = '';
+    for (let i in publication.sharedWith) {
+        const user = publication.sharedWith[i];
+        str += `<div class='guest-box'><img class='guest' src='${user.image}'><h6>${user.firstName()}</h6></div>`;
+    }
+    $guests.innerHTML = str;
 }
