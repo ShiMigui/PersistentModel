@@ -8,27 +8,47 @@
 
       .publication {
          width: 100%;
+         color: white;
          max-width: 100%;
+         position: relative;
          box-sizing: border-box;
-
-         color: black;
 
          img {
             border-radius: $radius-elements;
             background-color: rgba(0, 0, 0, 0.1);
             aspect-ratio: 16/9;
+            transition: 0.3s;
             display: block;
             width: 100%;
          }
 
-         p {
-            color: gray;
+         .information {
+            position: absolute;
+            transition: 0.3s;
+            width: 90%;
+            opacity: 0;
+            bottom: 0;
+            left: 5%;
+
+            .date{
+               font-size: .7em;
+            }
+
+            .title {
+               white-space: nowrap;
+               overflow: hidden;
+               text-overflow: ellipsis;
+            }
          }
 
-         .title {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+         &:hover {
+            img {
+               filter: brightness(0.4);
+            }
+
+            .information {
+               opacity: 1;
+            }
          }
       }
    }

@@ -13,15 +13,13 @@ if (areInstancesGenerated()) {
 
     FORM.addEventListener("submit", (e) => {
         e.preventDefault();
-        const NAME = nameInp.value.toLowerCase();
+        const NAME = nameInp.value.toUpperCase();
         const PASS = passInp.value;
 
         if (!NAME || !PASS) {
             alert("Please fill in all fields");
             return;
         }
-
-        console.log("test");
 
         for (let item of PERSONS) {
             if (item.password === PASS && (item.name == NAME || item.email == NAME)) {

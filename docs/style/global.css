@@ -153,24 +153,40 @@ body main {
 }
 .publications-sect .publications .publication {
   width: 100%;
+  color: white;
   max-width: 100%;
+  position: relative;
   box-sizing: border-box;
-  color: black;
 }
 .publications-sect .publications .publication img {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   aspect-ratio: 16/9;
+  transition: 0.3s;
   display: block;
   width: 100%;
 }
-.publications-sect .publications .publication p {
-  color: gray;
+.publications-sect .publications .publication .information {
+  position: absolute;
+  transition: 0.3s;
+  width: 90%;
+  opacity: 0;
+  bottom: 0;
+  left: 5%;
 }
-.publications-sect .publications .publication .title {
+.publications-sect .publications .publication .information .date {
+  font-size: 0.7em;
+}
+.publications-sect .publications .publication .information .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.publications-sect .publications .publication:hover img {
+  filter: brightness(0.4);
+}
+.publications-sect .publications .publication:hover .information {
+  opacity: 1;
 }
 
 button,

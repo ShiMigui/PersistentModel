@@ -91,8 +91,10 @@ export default class Publication extends Persistent {
         return `
         <a class="publication" href="./publication.html?cd=${this.id}">
             <img src="${this.image}" alt="${this.description}">
-            <h4 class='title'>${this.title}</h4>
-            <p class='description'>${formatDate(this.date)}</p>
+            <div class='information'>
+                <h4 class='title'>${this.title}</h4>
+                <p class='date'>${formatDate(this.date)}</p>
+            </div>
         </a>
         `;
     }
