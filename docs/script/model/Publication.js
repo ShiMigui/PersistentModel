@@ -52,7 +52,7 @@ export default class Publication extends Persistent {
      */
     sharedWith = [];
 
-    image = `https://via.placeholder.com/800x450`;
+    image = `http://via.placeholder.com/800x450`;
 
     /**
      * Constructs a new Publication instance.
