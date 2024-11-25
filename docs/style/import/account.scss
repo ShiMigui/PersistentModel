@@ -1,0 +1,36 @@
+#account-box {
+    @include flex(center, center, 5px, column);
+    padding: 5px;
+
+    #account-image {
+        width: 25px;
+
+        &:not([active])+#account-dropdown {
+            display: none;
+        }
+    }
+
+    #account-dropdown {
+        border-radius: 0 0 $el-rad $el-rad;
+        background-color: $color;
+        position: absolute;
+        min-width: 150px;
+        display: block;
+        padding: 10px;
+        z-index: 50;
+        top: 100%;
+        right: 0;
+
+        li {
+            list-style: none;
+
+            * {
+                color: white;
+            }
+        }
+
+        :not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

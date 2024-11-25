@@ -15,11 +15,11 @@ if (areInstancesGenerated()) {
     const $main = document.querySelector("main");
 
     const $description = $main.querySelector("#description");
-    const $img = $main.querySelector("#banner img");
     const $guests = $main.querySelector("#guests");
     const $author = $main.querySelector("#author");
     const $title = $main.querySelector("#title");
     const $date = $main.querySelector("#date");
+    const $img = $main.querySelector("img");
 
     
     $author.textContent = publication.author.firstName();

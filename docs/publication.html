@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <section class="limiter">
+        <section>
             <a href="./index.html"><img src="./image/logo.png" alt="logo do site"></a>
 
             <form action="./search.html" method="get">
@@ -21,37 +21,34 @@
             </form>
 
             <div class="right">
-                <div class="buttons">
+                <div class="btns">
                     <a href="./login.html" class="btn">Login</a>
                     <a href="./cadastro.html" class="btn secondary">Cadastre-se</a>
                 </div>
 
                 <article id="account-box" class="hidden">
                     <img src="" alt="imagem do usuário" id="account-image">
-                    <ion-icon name="chevron-down-outline"></ion-icon>
-                    <ul class="dropdown">
-                        <h6 id="account-name">NAME</h6>
+                    <ul id="account-dropdown">
+                        <li>
+                            <h5 id="account-name"></h5>
+                        </li>
                         <li><a href="./logout.html">Sair</a></li>
                     </ul>
                 </article>
             </div>
         </section>
     </header>
-    
+
     <main>
-        <article class="container-box">
-            <div id="banner">
-                <img src="" alt="banner do show">
-                <div>
-                    <h1 id="title"></h1>
-                    <h2 id="date"></h2>
-                </div>
-            </div>
+        <article class="container">
+            <img src="" alt="banner do show">
+            <h1 id="title"></h1>
+            <h2 id="date"></h2>
             <p id="description"></p>
             <p>Author: <b id="author"></b></p>
         </article>
 
-        <article class="container-box">
+        <article class="container">
             <h2>Guests</h2>
             <section id="guests"></section>
         </article>

@@ -4,7 +4,7 @@ import { hide, unhide } from "./hidden.js";
 const $header = document.querySelector("header .right")
 export default () => {
     if (isLoggedIn()) {
-        const $buttons = $header.querySelector(".buttons");
+        const $buttons = $header.querySelector(".btns");
         hide($buttons);
 
         const USER = getUser();
@@ -12,12 +12,11 @@ export default () => {
         const $accountBox = $header.querySelector("#account-box");
         const $accountName = $accountBox.querySelector("#account-name");
         const $accountImage = $accountBox.querySelector("#account-image");
-        const $arrow = $header.querySelector("[name='chevron-down-outline']");
 
         $accountName.textContent = USER.firstName();
         unhide($accountBox);
         $accountImage.src = USER.image;
 
-        $arrow.addEventListener("click", () => $arrow.classList.toggle('active'));
+        $accountImage.addEventListener("click", () => $accountImage.toggleAttribute('active'));
     }
 }

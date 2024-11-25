@@ -1,5 +1,12 @@
-$primary-color: #0075F2;
-// $primary-color: #5C95FF;
-$padding-elements: 5px 10px;
-$radius-elements: 5px;
+$color: #0075F2;
+$duration: .3s;
 $limit: 1000px;
+
+// Header variables
+$header-h: 60px;
+
+// Elements variables
+$el-pad: 5px 10px;
+$el-rad: 5px;
+
+@import "./basic.scss";

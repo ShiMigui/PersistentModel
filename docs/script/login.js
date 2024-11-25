@@ -21,6 +21,8 @@ if (areInstancesGenerated()) {
             return;
         }
 
+        console.log(PASS);
+
         for (let item of PERSONS) {
             if (item.password === PASS && (item.name == NAME || item.email == NAME)) {
                 login(item.getKey());

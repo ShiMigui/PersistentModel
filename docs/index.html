@@ -4,20 +4,18 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
    <script src="./script/index.js" type="module" defer></script>
    <link rel="stylesheet" href="./style/global.css">
    <title>Home</title>
 </head>
 
 <body>
-   <a id="banner" href="./publication.html?banner">
+   <article id="banner">
       <img src="https://via.placeholder.com/1000x250" alt="imagem banner">
-   </a>
+   </article>
 
    <header>
-      <section class="limiter">
+      <section>
          <a href="./index.html"><img src="./image/logo.png" alt="logo do site"></a>
 
          <form action="./search.html" method="get">
@@ -26,16 +24,17 @@
          </form>
 
          <div class="right">
-            <div class="buttons">
+            <div class="btns">
                <a href="./login.html" class="btn">Login</a>
                <a href="./cadastro.html" class="btn secondary">Cadastre-se</a>
             </div>
 
             <article id="account-box" class="hidden">
                <img src="" alt="imagem do usuário" id="account-image">
-               <ion-icon name="chevron-down-outline"></ion-icon>
-               <ul class="dropdown">
-                  <h6 id="account-name">NAME</h6>
+               <ul id="account-dropdown">
+                  <li>
+                     <h5 id="account-name"></h5>
+                  </li>
                   <li><a href="./logout.html">Sair</a></li>
                </ul>
             </article>
@@ -44,7 +43,7 @@
    </header>
 
    <main>
-      <article class="publications-sect">
+      <article class="container">
          <h2>Publicações</h2>
          <section class="publications"></section>
       </article>

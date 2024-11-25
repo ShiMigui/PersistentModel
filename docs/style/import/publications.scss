@@ -1,55 +1,45 @@
-.publications-sect {
-   padding: 10px;
+.publications {
+    @include grid(repeat(auto-fill, minmax(200px, 1fr)));
 
-   .publications {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+    .publication {
+        position: relative;
+        color: white;
 
-      .publication {
-         width: 100%;
-         color: white;
-         max-width: 100%;
-         position: relative;
-         box-sizing: border-box;
+        img, .information{
+            transition-duration: $duration;
+        }
 
-         img {
-            border-radius: $radius-elements;
-            background-color: rgba(0, 0, 0, 0.1);
-            aspect-ratio: 16/9;
-            transition: 0.3s;
-            display: block;
+        img {
+            border-radius: $el-rad;
             width: 100%;
-         }
+        }
 
-         .information {
+        .information {
             position: absolute;
-            transition: 0.3s;
             width: 90%;
             opacity: 0;
-            bottom: 0;
+            bottom: 5px;
             left: 5%;
 
-            .date{
-               font-size: .7em;
+            .date {
+                font-size: 0.7em;
             }
 
             .title {
-               white-space: nowrap;
-               overflow: hidden;
-               text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
-         }
+        }
 
-         &:hover {
+        &:hover {
             img {
-               filter: brightness(0.4);
+                filter: brightness(0.9);
             }
 
             .information {
-               opacity: 1;
+                opacity: 1;
             }
-         }
-      }
-   }
+        }
+    }
 }

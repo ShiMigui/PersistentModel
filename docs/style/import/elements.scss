@@ -1,44 +1,38 @@
 button,
 .btn {
-   border: 1px solid $primary-color;
-   border-radius: $radius-elements;
-   padding: $padding-elements;
-   background-color: white;
+   @include basic-element();
+
+   transition-duration: $duration;
+   border: 1px solid $color;
    display: inline-flex;
    align-items: center;
-   color: $primary-color;
-   border: none;
+   color: $color;
 
    &:not(.secondary) {
-      background-color: $primary-color;
+      background-color: $color;
       color: white;
    }
 
    &:hover {
-      filter: brightness(.95);
       cursor: pointer;
    }
 
    &:active {
+      filter: brightness(.95);
       transform: scale(.95);
    }
 }
 
 input {
-   padding: $padding-elements;
-   border-radius: $radius-elements;
-   border: 1px solid $primary-color;
+   @include basic-element();
+
+   border: 1px solid $color;
 }
 
 fieldset {
-   padding: $padding-elements;
-   border: none;
+   @include basic-element();
 }
 
-.buttons {
+.btns {
    @include flex(center, center, 10px);
-}
-
-.container-box+.container-box {
-   margin-top: 50px;
 }

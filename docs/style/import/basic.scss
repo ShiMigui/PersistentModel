@@ -6,14 +6,40 @@
   margin: 0;
 }
 
-@import "./font.scss";
-
-.limiter {
-  margin-inline: auto;
-  max-width: $limit;
-  width: 100%;
+[hidden] {
+  display: none !important;
 }
 
-.hidden {
-  display: none !important;
+h1 {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+h3, h4, h5, h5, p {
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
 }
