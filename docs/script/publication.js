@@ -12,6 +12,8 @@ if (areInstancesGenerated()) {
 
     const publication = Publication.retrieveById(ID);
 
+    document.querySelector("title").innerText = publication.title;
+
     const $main = document.querySelector("main");
 
     const $description = $main.querySelector("#description");
