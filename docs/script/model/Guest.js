@@ -9,25 +9,28 @@ export default class Guest extends Persistent {
     /**
      * The password of the guest.
      * @type {string}
-     * @default ''
      */
     password = '';
 
     /**
      * The email address of the guest.
      * @type {string}
-     * @default ''
      */
     email = '';
 
     /**
      * The name of the guest.
      * @type {string}
-     * @default ''
      */
     name = '';
 
-    image = 'http://via.placeholder.com/50x50'
+    /**
+     * The full name of the guest, captalized.
+     * @type {string}
+     */
+    fullName;
+
+    image;
 
     /**
      * Constructs a new Guest instance.
@@ -39,11 +42,13 @@ export default class Guest extends Persistent {
      * @param {string} [options.email] - The email of the guest.
      * @param {string} [options.password] - The password of the guest.
      */
-    constructor({ id, name, email, password } = {}) {
+    constructor({ id, name, email, password, image } = {}) {
         super({ id });
+        this.password = password;
         this.name = name.toUpperCase();
         this.email = email.toUpperCase();
-        this.password = password;
+        this.fullName = this.capitalizeName();
+        this.image = image ? image : './image/g50x50.png';
     }
 
     /**
@@ -51,8 +56,18 @@ export default class Guest extends Persistent {
      * 
      * @returns {string} The first guest's name.
      */
-    firstName(){
-        const NAME = this.name.split(' ')[0];
-        return NAME.at(0) + NAME.slice(1).toLowerCase();
+    firstName() {
+        return this.fullName.split(' ')[0];
+    }
+
+    /**
+     * Returns the guest's full name capitalized.
+     * 
+     * @returns {string} The guest's full name.
+     */
+    capitalizeName() {
+        const ARR = this.name.split(' ');
+        const capitalized = ARR.map(word => word.at(0).toUpperCase() + word.slice(1).toLowerCase());
+        return capitalized.join(' ');
     }
 }
