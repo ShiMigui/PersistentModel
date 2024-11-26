@@ -6,7 +6,7 @@ export default () => {
     } else {
         const OK = window.confirm("The instances are not generated. Do you want to generate them?");
 
-        if (OK) window.location.href = "./mock.html";
+        if (OK) window.location.href = "./index.html";
         else console.log("Instances generation was canceled by the user.");
 
         return false;
