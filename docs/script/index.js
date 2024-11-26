@@ -1,4 +1,3 @@
-import areInstancesGenerated from "./func/areInstancesGenerated.js";
 import generateInstances from "./func/generateInstances.js";
 import PublicationType from "./model/PublicationType.js";
 import Classification from "./model/Classification.js";
@@ -6,8 +5,6 @@ import Publication from "./model/Publication.js";
 import userSession from "./func/userSession.js";
 import Author from "./model/Author.js";
 import Guest from "./model/Guest.js";
-
-
 
 {
     generateInstances(PublicationType);
