@@ -4,7 +4,7 @@
 @import "./import/elements.scss";
 
 body {
-    background-color: darken($color: $primary-color, $amount: 10%);
+    background-color: darken($color: $color, $amount: 10%);
     align-items: center;
     min-height: 100vh;
     display: flex;
