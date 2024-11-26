@@ -4,10 +4,12 @@ export default () => {
         console.log("Instances have already been generated.");
         return true;
     } else {
-        const OK = window.confirm("The instances are not generated. Do you want to generate them?");
+        const IS_NOT_INDEX = !window.location.pathname.includes("index.html");
+        let ok;
 
-        if (OK) window.location.href = "./index.html";
-        else console.log("Instances generation was canceled by the user.");
+        if(IS_NOT_INDEX) ok =  window.confirm("The instances are not generated. Do you want to generate them?")
+
+        if (ok && IS_NOT_INDEX) window.location.href = "./index.html";
 
         return false;
     }
