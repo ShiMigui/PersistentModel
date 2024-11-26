@@ -1,16 +1,10 @@
 export default () => {
-    let generated = localStorage.getItem("generateInstances") == "True";
-    if (generated) {
+    const IS_GENERATED = localStorage.getItem("generateInstances") == "True";
+    if (IS_GENERATED) {
         console.log("Instances have already been generated.");
         return true;
     } else {
-        const IS_NOT_INDEX = !window.location.pathname.includes("index.html");
-        let ok;
-
-        if(IS_NOT_INDEX) ok =  window.confirm("The instances are not generated. Do you want to generate them?")
-
-        if (ok && IS_NOT_INDEX) window.location.href = "./index.html";
-
-        return false;
+        window.alert("The instances are not generated. You will be redirected to 'index.html'");
+        window.location.href = "./index.html";
     }
 }

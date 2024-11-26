@@ -9,7 +9,7 @@ import Guest from "./model/Guest.js";
 
 
 
-if (!areInstancesGenerated()) {
+{
     generateInstances(PublicationType);
     generateInstances(Classification);
     generateInstances(Publication);
@@ -17,9 +17,7 @@ if (!areInstancesGenerated()) {
     generateInstances(Guest);
 
     localStorage.setItem("generateInstances", "True");
-}
 
-{
     userSession();
 
     const $publications = document.querySelector(".publications");

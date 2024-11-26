@@ -11,7 +11,7 @@ import Guest from "../model/Guest.js";
  * */
 export default () => {
     const PERSONS = [];
-    Author.retrieveAll().forEach(item => PERSONS.push(item));
-    Guest.retrieveAll().forEach(item => PERSONS.push(item));
+    PERSONS.push(...Author.retrieveAll());
+    PERSONS.push(...Guest.retrieveAll());
     return PERSONS;
 }
