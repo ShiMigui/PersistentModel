@@ -1,7 +1,5 @@
 import { database } from "./database.js";
 
-const BODY = document.querySelector("body");
-
 /**
  * Generates instances of a given class and commits them.
  *
@@ -36,7 +34,7 @@ export default function generateInstances(node = null) {
 
         const INSTANCE = new node(ITEM);
         const COMP = INSTANCE.name ? ` - ${INSTANCE.name}` : '';
-        BODY.innerHTML += (`Generating... ${NAME}, ID: ${INSTANCE.id}${COMP}<br/>`);
+        console.log(`Generating... ${NAME}, ID: ${INSTANCE.id}${COMP}<br/>`);
         INSTANCE.commit();
     }
 } 
