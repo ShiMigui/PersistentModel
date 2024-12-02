@@ -52,7 +52,8 @@ export default class Publication extends Persistent {
      */
     sharedWith = [];
 
-    image = `http://via.placeholder.com/800x450`;
+    image;
+
 
     /**
      * Constructs a new Publication instance.
@@ -67,7 +68,7 @@ export default class Publication extends Persistent {
      * @param {Object} [options.author] - The author of the publication, converted to an `Author` instance.
      * @param {string} [options.date] - The publication date, converted to a `Date` object.
      */
-    constructor({ id, title, description, type, sharedWith, author, date } = {}) {
+    constructor({ id, title, description, type, sharedWith, author, date, image } = {}) {
         super({ id });
         this.title = title;
         this.date = new Date(date);
@@ -75,6 +76,7 @@ export default class Publication extends Persistent {
         this.author = new Author(author);
         this.type = new PublicationType(type);
         this.sharedWith = sharedWith.map(o => new Guest(o));
+        this.image = image ? image : './image/g800x450.png'; 
     }
 
     /**

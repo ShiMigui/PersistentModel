@@ -1,14 +1,10 @@
 export default () => {
-    let generated = localStorage.getItem("generateInstances") == "True";
-    if (generated) {
+    const IS_GENERATED = localStorage.getItem("generateInstances") == "True";
+    if (IS_GENERATED) {
         console.log("Instances have already been generated.");
         return true;
     } else {
-        const OK = window.confirm("The instances are not generated. Do you want to generate them?");
-
-        if (OK) window.location.href = "./mock.html";
-        else console.log("Instances generation was canceled by the user.");
-
-        return false;
+        window.alert("The instances are not generated. You will be redirected to 'index.html'");
+        window.location.href = "./index.html";
     }
 }

@@ -4,6 +4,10 @@ import Guest from "../model/Guest.js";
  * Logs in the user by storing their login key in sessionStorage.
  * 
  * @param {string} loginKey - The unique key representing the user's login.
+ * 
+ * @example
+ * var user = new Guest();
+ * login(user.getKey());
  */
 export function login(loginKey) {
     sessionStorage.setItem("login", loginKey.trim());

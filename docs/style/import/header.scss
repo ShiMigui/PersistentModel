@@ -4,7 +4,11 @@ header {
     &>section {
         @include flex(space-between);
         @include limiter();
-        
+
+        &>a img {
+            width: 40px;
+        }
+
         min-height: $header-h;
         position: relative;
 
@@ -26,4 +30,5 @@ header {
         }
     }
 }
+
 @import "./account.scss"

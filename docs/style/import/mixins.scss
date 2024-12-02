@@ -23,7 +23,10 @@
     background-color: white;
     border-radius: $el-rad;
     padding: $el-pad;
+}
 
+@mixin basic-element-with-hover() {
+    @include basic-element();
     &:hover {
         filter: brightness(.95);
         cursor: pointer;

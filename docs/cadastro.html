@@ -12,7 +12,13 @@
 <body>
     <form class="center-box">
         <fieldset>
-            <legend>Cadastro</legend>
+            <div>
+                <legend>Cadastro</legend>
+                <select name="typeUser" id="typeUser" required>
+                    <option value="guest" selected>Convidado</option>
+                    <option value="author">Autor</option>
+                </select>
+            </div>
 
             <label for="emailInp">Email</label>
             <input type="email" id="emailInp" name="email" autocomplete="email" required>

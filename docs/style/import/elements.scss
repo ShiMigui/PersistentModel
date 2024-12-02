@@ -1,6 +1,6 @@
 button,
 .btn {
-   @include basic-element();
+   @include basic-element-with-hover();
 
    transition-duration: $duration;
    border: 1px solid $color;
@@ -24,13 +24,14 @@ button,
 }
 
 input {
-   @include basic-element();
+   @include basic-element-with-hover();
 
    border: 1px solid $color;
 }
 
 fieldset {
    @include basic-element();
+   border: none;
 }
 
 .btns {
