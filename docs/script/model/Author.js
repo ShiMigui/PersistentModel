@@ -25,9 +25,9 @@ export default class Author extends Guest {
      * @param {string} [options.password] - The email of the author.
      * @param {Object[]} [options.classifications] - An array of classification objects to associate with the author.
      */
-    constructor({ id, name, email, password, classifications } = {}) {
+    constructor({ id, name, email, password, classifications = [] } = {}) {
         super({ id, name, email, password });
-        this.classifications = classifications.map(o => new Classification(o));
+        this.classifications = classifications != [] ? classifications.map(o => new Classification(o)) : [];
     }
 
     /**

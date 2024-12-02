@@ -10,7 +10,10 @@
         }
 
         img {
+            background-color: black;
             border-radius: $el-rad;
+            aspect-ratio: 16 / 9;
+            display: block;
             width: 100%;
         }
 

@@ -218,7 +218,10 @@ body > #banner img {
   transition-duration: 0.3s;
 }
 .publications .publication img {
+  background-color: black;
   border-radius: 5px;
+  aspect-ratio: 16/9;
+  display: block;
   width: 100%;
 }
 .publications .publication .information {

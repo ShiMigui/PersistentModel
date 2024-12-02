@@ -62,6 +62,9 @@ export default class Persistent {
     * Persistent.commit(instance); // Saves the instance.
     */
    static commit(obj) {
+      if (!(obj instanceof Persistent)) {
+         obj = new this(obj);
+      }
       const id = obj.id;
       const str = JSON.stringify(obj);
       const key = this.getKey(id);
