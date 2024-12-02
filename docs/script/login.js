@@ -2,36 +2,29 @@ import areInstancesGenerated from "./func/areInstancesGenerated.js";
 import getUsers from "./func/getUsers.js";
 import { isLoggedIn, login } from "./func/userAuth.js";
 
-if (areInstancesGenerated()) {
-    if (isLoggedIn()) window.location.href = "index.html";
+areInstancesGenerated();
 
-    const PERSONS = getUsers();
+if (isLoggedIn()) window.location.href = "index.html";
 
-    const FORM = document.querySelector("body>form");
-    let nameInp = FORM.querySelector("#nameInp");
-    let passInp = FORM.querySelector("#passwordInp");
+const PERSONS = getUsers();
 
-    FORM.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const NAME = nameInp.value.toUpperCase();
-        const PASS = passInp.value;
+const FORM = document.querySelector("body>form");
+const $nameInp = FORM.querySelector("#nameInp");
+const $passInp = FORM.querySelector("#passwordInp");
 
-        if (!NAME || !PASS) {
-            alert("Please fill in all fields");
+FORM.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let name = $nameInp.value.toUpperCase();
+    let pass = $passInp.value;
+
+    for (let item of PERSONS) {
+        if (item.password === pass && (item.name == name || item.email == name)) {
+            login(item.getKey());
+            window.location.href = "index.html"
             return;
         }
+    }
 
-        console.log(PASS);
-
-        for (let item of PERSONS) {
-            if (item.password === PASS && (item.name == NAME || item.email == NAME)) {
-                login(item.getKey());
-                window.location.href = "index.html"
-                return;
-            }
-        }
-
-        passInp.value = '';
-        alert("Invalid credentials");
-    })
-}
+    $passInp.value = '';
+    alert("Invalid credentials");
+})

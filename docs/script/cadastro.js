@@ -1,59 +1,62 @@
 import areInstancesGenerated from "./func/areInstancesGenerated.js";
 import getUsers from "./func/getUsers.js";
+import Author from "./model/Author.js";
 import Guest from "./model/Guest.js";
 
-if (areInstancesGenerated()) {
-    const USERS = getUsers();
+areInstancesGenerated();
 
-    const FORM = document.querySelector("form");
+const USERS = getUsers();
 
-    let nameInp = FORM.querySelector("#nameInp");
-    let mailInp = FORM.querySelector("#emailInp");
-    let passwordInp = FORM.querySelector("#passwordInp");
-    let passwordInp2 = FORM.querySelector("#passwordInp2");
+const FORM = document.querySelector("form");
 
-    FORM.addEventListener("submit", (e) => {
-        e.preventDefault();
+const $nameInp = FORM.querySelector("#nameInp");
+const $mailInp = FORM.querySelector("#emailInp");
+const $passwordInp = FORM.querySelector("#passwordInp");
+const $passwordInp2 = FORM.querySelector("#passwordInp2");
+const $typeUser = FORM.querySelector("#typeUser");
 
-        const name = nameInp.value.trim().toUpperCase();
-        const email = mailInp.value.trim();
-        const password = passwordInp.value.trim();
-        const password2 = passwordInp2.value.trim();
+FORM.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-        if (!name || !email || !password || !password2) {
-            alert("Please fill in all fields");
-            return;
+    const name = $nameInp.value.trim().toUpperCase();
+    const email = $mailInp.value.trim();
+    const password = $passwordInp.value.trim();
+    const password2 = $passwordInp2.value.trim();
+    const type = $typeUser.value.toLowerCase();
+
+    if (password !== password2) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    let userExists = false;
+    for (let u of USERS) {
+        if (u.email === email) {
+            userExists = true;
+            break;
         }
+    }
 
-        if (password !== password2) {
-            alert("Passwords do not match");
-            return;
-        }
+    if (userExists) {
+        alert("Email already registered");
+        return;
+    }
 
-        let userExists = false;
-        for (let u of USERS) {
-            if (u.email === email) {
-                userExists = true;
-                break;
-            }
-        }
+    const id = USERS.length + 1;
 
-        if (userExists) {
-            alert("Email already registered");
-            return;
-        }
+    const o = {
+        id,
+        name,
+        email,
+        password
+    };
 
-        const id = USERS.length + 1;
-
-        const o = {
-            id,
-            name,
-            email,
-            password
-        };
-
-        USERS.push(o);
+    USERS.push(o);
+    if (type == 'guest') {
         Guest.commit(o);
-        window.location.href = './index.html';
-    })
-}
+    }
+    else {
+        Author.commit(o);
+    }
+    window.location.href = './index.html';
+})

@@ -3,22 +3,22 @@ import Publication from "./model/Publication.js";
 import userSession from "./func/userSession.js";
 import params from "./func/params.js";
 
-if (areInstancesGenerated()) {
-    userSession();
+areInstancesGenerated();
 
-    const query = params.get("q").toLowerCase();
+userSession();
 
-    const $publications = document.querySelector(".publications");
-    const $queryEl = document.querySelector(".search-query");
+const QUERY = params.get("q").toLowerCase();
 
-    const allPublications = Publication.retrieveAll();
+const $publications = document.querySelector(".publications");
+const $queryEl = document.querySelector(".search-query");
 
-    const filtered = allPublications.filter(publication =>
-        publication.title.toLowerCase().includes(query) ||
-        publication.description.toLowerCase().includes(query) ||
-        publication.type.name.toLowerCase().includes(query)
-    );
+const allPublications = Publication.retrieveAll();
 
-    $queryEl.textContent = query;
-    filtered.forEach(p => $publications.innerHTML += p.render());
-}
+const filtered = allPublications.filter(publication =>
+    publication.title.toLowerCase().includes(QUERY) ||
+    publication.description.toLowerCase().includes(QUERY) ||
+    publication.type.name.toLowerCase().includes(QUERY)
+);
+
+$queryEl.textContent = QUERY;
+filtered.forEach(p => $publications.innerHTML += p.render());
