@@ -101,17 +101,15 @@ export default class Persistent {
     * @returns {Persistent[]} An array of all instances found in localStorage.
     * 
     * @example
-    * const instances = Persistent.getAll();
+    * const instances = Persistent.retrieveAll();
     * console.log(instances.length); // Outputs the total number of stored instances.
     */
    static retrieveAll() {
       const ITEMS = [];
       const LENGTH = this.getLength();
       for (let i = 1; i <= LENGTH; i++) {
-         const item = this.retrieveById(i);
-         if (item) {
-            ITEMS.push(item);
-         }
+         const ITEM = this.retrieveById(i);
+         if (ITEM) ITEMS.push(ITEM);
       }
       return ITEMS;
    }

@@ -90,10 +90,7 @@ fieldset {
   background-color: white;
   border-radius: 5px;
   padding: 5px 10px;
-}
-fieldset:hover {
-  filter: brightness(0.95);
-  cursor: pointer;
+  border: none;
 }
 
 .btns {
@@ -118,6 +115,9 @@ header > section {
   width: 100%;
   min-height: 60px;
   position: relative;
+}
+header > section > a img {
+  width: 40px;
 }
 header > section form {
   display: flex;

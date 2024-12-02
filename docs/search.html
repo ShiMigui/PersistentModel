@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="./script/search.js" type="module" defer></script>
+   <link rel="stylesheet" href="./style/global.css">
+   <title>Search</title>
+</head>
+
+<body>
+   <header>
+      <section>
+         <a href="./index.html"><img src="./image/logo.png" alt="logo do site"></a>
+
+         <form action="./search.html" method="get">
+            <input type="text" name="q" id="inp-search">
+            <button type="submit">Procurar</button>
+         </form>
+
+         <div class="right">
+            <div class="btns">
+               <a href="./login.html" class="btn">Login</a>
+               <a href="./cadastro.html" class="btn secondary">Cadastre-se</a>
+            </div>
+
+            <article id="account-box" class="hidden">
+               <img src="" alt="imagem do usuário" id="account-image">
+               <ul id="account-dropdown">
+                  <li>
+                     <h5 id="account-name"></h5>
+                  </li>
+                  <li><a href="./logout.html">Sair</a></li>
+               </ul>
+            </article>
+         </div>
+      </section>
+   </header>
+
+   <main>
+      <article class="container">
+         <h2>Procurando por... <span class="search-query"></span></h2>
+         <section class="publications"></section>
+      </article>
+   </main>
+</body>
+
+</html>
